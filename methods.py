@@ -5,6 +5,13 @@
 # returns a list of integers between 1 and the number passed in.
 #
 # So if the number 5 is passed in, num_list_with_arg should return [1, 2, 3, 4]
+# num_max=int(input('input max number'))
+# num_list_with_arg=list(range(1,num_max))
+# print(num_list_with_arg)
+
+# Solution
+# def num_list_with_arg(num):
+#     return list(range(1,num))
 
 
 # #2: Modify the has_ruby_exp method below so that it returns a SORTED list of
@@ -16,41 +23,94 @@ def has_ruby_exp():
     ruby_experience = []
 
     experience = {
-        'jimmy': {
-            'bjj': False,
-            'soccer': False,
-            'ruby': True,
-            'baking': True,
-            'biking': True,
-            'pasta': False
-        },
-        'don': {
-            'bjj': False,
-            'soccer': False,
-            'ruby': True,
-            'baking': True,
-            'biking': False,
-            'pasta': False
-        },
-        'zakk': {
-            'bjj': False,
-            'soccer': False,
-            'ruby': True,
-            'baking': False,
-            'biking': False,
-            'pasta': True
-        },
-        'hector': {
-            'bjj': True,
-            'soccer': True,
-            'ruby': False,
-            'baking': False,
-            'biking': True,
-            'pasta': False
-        }
-    }
+          'jimmy': {
+              'bjj': False,
+              'soccer': False,
+              'ruby': True,
+              'baking': True,
+              'biking': True,
+              'pasta': False
+          },
+          'don': {
+              'bjj': False,
+              'soccer': False,
+              'ruby': True,
+              'baking': True,
+              'biking': False,
+              'pasta': False
+          },
+          'zakk': {
+              'bjj': False,
+              'soccer': False,
+              'ruby': True,
+              'baking': False,
+              'biking': False,
+              'pasta': True
+          },
+          'hector': {
+              'bjj': True,
+              'soccer': True,
+              'ruby': False,
+              'baking': False,
+              'biking': True,
+              'pasta': False
+          }
+      }
+    for i in experience:
+        if experience[i]['ruby'] == True:
+            ruby_experience.append(i)
 
+    return ruby_experience
+print(has_ruby_exp())
 
+#Joseph's solution
+# def has_ruby_exp():
+    
+#     ruby_experience = []
+
+#     experience = {
+#         'jimmy': {
+#             'bjj': False,
+#             'soccer': False,
+#             'ruby': True,
+#             'baking': True,
+#             'biking': True,
+#             'pasta': False
+#         },
+#         'don': {
+#             'bjj': False,
+#             'soccer': False,
+#             'ruby': True,
+#             'baking': True,
+#             'biking': False,
+#             'pasta': False
+#         },
+#         'zakk': {
+#             'bjj': False,
+#             'soccer': False,
+#             'ruby': True,
+#             'baking': False,
+#             'biking': False,
+#             'pasta': True
+#         },
+#         'hector': {
+#             'bjj': True,
+#             'soccer': True,
+#             'ruby': False,
+#             'baking': False,
+#             'biking': True,
+#             'pasta': False
+#         }
+#     }
+    
+#     for person in experience:        
+#         if experience[person]['ruby'] == True:
+#             ruby_experience.append(person)
+    
+#     ruby_experience.sort()
+
+#     return ruby_experience
+# print(has_ruby_exp())
 
 # #3: Create a method called toggle_str_num that takes an argument. If the
 # argument is a string, convert it to an integer and return the integer; If the
@@ -58,6 +118,24 @@ def has_ruby_exp():
 # argument is neither a string nor an integer, return the string "this is not a
 # str or a int":
 
+def toggle_str_num(dataIn):
+
+    if type(dataIn) == str:
+        return int(dataIn)
+    elif type(dataIn)==int:
+        return str(dataIn)
+    else:
+        other=type(dataIn)
+        return print(f"this is not a str or a int but {other}") 
+result=toggle_str_num("54")
+print(result)
+print(type(result))
+result2=toggle_str_num(10)
+print(result2)
+print(type(result2))
+result3=toggle_str_num(True)
+print(result3)
+print(type(result3))
 
 
 # Commit when you finish working on these questions!
